@@ -1,0 +1,196 @@
+/* การตั้งค่าพื้นฐาน */
+body {
+    background-color: #f5f2ed; 
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* ภาชนะหลักที่ครอบข้อความและ Carousel */
+.gallery-section {
+    position: relative; 
+    width: fit-content; 
+    margin: 0 auto; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    padding-top: 50px; 
+}
+
+/* ---------------------------------- */
+/* สไตล์สำหรับส่วนข้อความ */
+/* ---------------------------------- */
+
+/* H1: BEST MOMENT */
+.gallery-section h1 {
+    font-family: serif; 
+    font-size: 3em;
+    color: #8b7d6e; 
+    margin: 0;
+    letter-spacing: 5px;
+    font-weight: 300; 
+    text-align: center;
+}
+
+/* SMALL: EVER */
+.gallery-section small {
+    display: block; 
+    font-size: 1em;
+    color: #9d8e82;
+    margin-top: -10px; 
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* H2: PANADDA & PACHARADANAI */
+.gallery-section h2 {
+    font-family: sans-serif; 
+    font-size: 1.5em;
+    color: #a0a0a0;
+    margin-top: 0;
+    margin-bottom: 40px; 
+    letter-spacing: 2px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* ---------------------------------- */
+/* สไตล์ Carousel (ใช้คลาส gfb- และ gallery-container) */
+/* ---------------------------------- */
+
+/* Wrapper ที่กำหนดความกว้างและซ่อนรูปภาพที่เกินมา */
+.gallery-container {
+    width: 1080px; /* Desktop: 3 รูปภาพ */
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    background: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    /* ตำแหน่งปุ่มจะอ้างอิงจาก .gallery-section ซึ่งเป็น relative */
+}
+
+/* ภาชนะรูปภาพที่ใช้เลื่อน (ใช้คลาส gfb-gallery) */
+.gfb-gallery {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+    gap: 15px; /* ระยะห่างระหว่างรูปภาพ */
+}
+
+/* สไตล์สำหรับรูปภาพ */
+.gfb-gallery img {
+    min-width: 350px; /* ความกว้างรูปต่อรูปบน Desktop */
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* สไตล์สำหรับปุ่มลูกศร (ใช้คลาส arrow และ left/right-arrow) */
+.arrow {
+    position: absolute; 
+    top: 60%; /* เลื่อนลงมาให้ตรงกับกึ่งกลางของกรอบรูป */
+    transform: translateY(-50%); 
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10; 
+    transition: background-color 0.2s;
+}
+
+.arrow:hover:not(:disabled) {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.arrow:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+/* ตำแหน่งปุ่ม (Desktop: อ้างอิงจาก .gallery-section) */
+.left-arrow {
+    left: -10px; 
+}
+
+.gfb-right-arrow {
+    right: -10px; 
+}
+
+/* --------------------------------------------- */
+/* Media Queries สำหรับ Responsive Design */
+
+/* Tablet / iPad */
+@media (max-width: 1024px) {
+    .gallery-container {
+        width: 715px; /* 715px สำหรับ 2 รูป */
+        padding: 20px;
+    }
+    .gfb-gallery img {
+        min-width: 337.5px; 
+    }
+    
+    /* ปรับตำแหน่งปุ่มให้ชิดกรอบด้านนอก */
+    .left-arrow {
+        left: 50%; 
+        margin-left: -390px; 
+    }
+    .gfb-right-arrow {
+        right: 50%;
+        margin-right: -390px;
+    }
+}
+
+/* Mobile / โทรศัพท์ */
+@media (max-width: 600px) {
+    .gallery-container {
+        width: 350px; /* 350px สำหรับ 1 รูป */
+        padding: 15px;
+    }
+    .gfb-gallery img {
+        min-width: 320px; 
+    }
+    
+    /* ปรับตำแหน่งปุ่มให้ชิดกรอบด้านนอก */
+    .left-arrow {
+        left: 50%;
+        margin-left: -200px; 
+    }
+    .gfb-right-arrow {
+        right: 50%;
+        margin-right: -200px;
+    }
+}
+/* ใช้ร่วมกันทั้งสองปุ่ม */
+.arrow, .gfb-arrow {
+    position: absolute; 
+    top: 60%; 
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10; 
+    transition: background-color 0.2s;
+}
+
+.arrow:hover, .gfb-arrow:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.arrow:disabled, .gfb-arrow:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}

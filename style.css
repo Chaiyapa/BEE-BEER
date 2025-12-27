@@ -1,0 +1,257 @@
+/* ============================================
+   พื้นหลังโทนกระดาษ
+============================================ */
+body {
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+    background: #f3f2ed;
+    color: #333;
+}
+
+/* ---------------------------------------------------
+   PHOTO SECTION
+--------------------------------------------------- */
+.photo-section {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    box-sizing: border-box;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.10);
+    gap: 35px;
+}
+
+.content-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1400px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* กล่องภาพ */
+.photo-box {
+    flex: 1;
+    max-width: 550px;
+}
+
+.photo-box img {
+    width: 110%;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* กล่องข้อความ */
+.text-box {
+    flex: 1;
+    text-align: center;
+}
+
+/* Logo style */
+.logo {
+    font-size: 48px;
+    margin: 0;
+    color: #7aa989;
+    font-family: "Brush Script MT", cursive;
+}
+
+.subtitle {
+    margin-top: -8px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+.divider {
+    width: 70%;
+    height: 1px;
+    background: #ccc;
+    margin: 25px auto;
+}
+
+.save-title {
+    letter-spacing: 5px;
+    font-size: 18px;
+    color: #666;
+}
+
+.date {
+    font-size: 32px;
+    margin: 10px 0 20px;
+    letter-spacing: 3px;
+    color: #444;
+}
+
+.desc {
+    font-size: 12px;
+    color: #777;
+    width: 80%;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .content-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .photo-box {
+        max-width: 90%;
+    }
+}
+
+/* ---------------------------------------------------
+   COUNTDOWN SECTION
+--------------------------------------------------- */
+.countdown-wrapper {
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.left-box {
+    width: 50%;
+    padding: 80px 60px;
+    background: #ffffff;
+    text-align: center;
+}
+
+.right-box {
+    width: 50%;
+}
+
+.countdown-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.day-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    letter-spacing: 8px;
+    color: #4d5d6c;
+    margin-bottom: 10px;
+}
+
+.date-line {
+    width: 80%;
+    height: 1px;
+    background: #c9d4db;
+    margin: 10px auto 25px;
+}
+
+.date-number {
+    font-size: 28px;
+    letter-spacing: 6px;
+    color: #4d5d6c;
+}
+
+.invite-text {
+    margin-top: 20px;
+    color: #788992;
+    font-size: 16px;
+}
+
+.countdown-container {
+    margin-top: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.time-box {
+    flex: 1;
+    background: linear-gradient(145deg, #e6f0f2, #d3e3e7);
+    padding: 22px 10px;
+    border-radius: 14px;
+    text-align: center;
+
+    box-shadow:
+        0 8px 18px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.time-box span {
+    font-size: 48px;
+    font-weight: 500;
+    color: #4d5d6c;
+}
+
+.time-box p {
+    margin-top: 5px;
+    color: #5f6f78;
+}
+
+/* ---------------------------------------------------
+   INVITATION SECTION
+--------------------------------------------------- */
+.invitation {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.invitation h2 {
+    font-family: 'Prompt', sans-serif;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* ---------------------------------------------------
+   SCHEDULE SECTION
+--------------------------------------------------- */
+.schedule {
+    max-width: 650px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.schedule h3 {
+    font-size: 1000px;
+    margin-bottom: 20px;
+    font-family: 'Prompt', sans-serif;
+}
+
+.schedule ul {
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+/* ---------------------------------------------------
+   FOOTER
+--------------------------------------------------- */
+.footer {
+    text-align: center;
+    margin: 60px 0 40px;
+    font-size: 16px;
+    color: #6d5c4a;
+}
+
+.map-link {
+    color: #b78b58;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.map-link:hover {
+    text-decoration: underline;
+}

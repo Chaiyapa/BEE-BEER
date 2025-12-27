@@ -1,0 +1,57 @@
+/* พื้นหลังลอยฟ้าแบบละมุน */
+body {
+    font-family: 'Prompt', sans-serif;
+    background: linear-gradient(180deg, #e8f4fc, #ffffff);
+    margin: 0;
+    padding: 20px;
+}
+
+/* การ์ดเชิญ */
+.invitation-card {
+    background: #ffffff;
+    width: 90%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 14px;
+    border: 2px solid #bcdfff;
+    box-shadow: 0 8px 18px rgba(164, 200, 240, 0.35);
+    text-align: center;
+}
+
+/* ส่วนรูป */
+.photo-container {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 14px;
+    border: 1.5px solid #a4c8f0;
+    background: #e8f4fc;
+}
+
+.prewedding-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* หัวข้อ */
+h1, h2, h3 {
+    color: #3a76b8;
+    margin-bottom: 5px;
+}
+
+/* ตัวหนังสือ */
+p {
+    color: #4a4a4a;
+    line-height: 1.6;
+}
+
+/* เส้นคั่นแบบนุ่ม */
+.soft-divider {
+    width: 60%;
+    height: 2px;
+    background: #bcdfff;
+    margin: 15px auto;
+    border-radius: 10px;
+}
