@@ -269,79 +269,113 @@ body {
 /* =========================================
    FIX COUNTDOWN SECTION – iPhone 11 ↓
 ========================================= */
-@media (max-width: 580px) {
+@media (max-width: 480px) {
 
+  /* ===============================
+   COUNTDOWN IMAGE FIX ALL DEVICES
+   =============================== */
+
+/* Desktop */
+.countdown-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.left-box,
+.right-box {
+    width: 50%;
+}
+
+/* Tablet + Mobile (รูปบน เนื้อหาล่าง) */
+@media (max-width: 1024px) {
     .countdown-wrapper {
         flex-direction: column;
         min-height: auto;
     }
 
-    /* แสดงรูปบนมือถือ */
     .right-box {
-        display: block !important;
         width: 100%;
-        height: auto;
-        order: 1;
+        height: 42vh;
+        order: -1; /* รูปขึ้นก่อน */
+        display: block;
     }
 
     .countdown-img {
         width: 100%;
-        height: auto;
-        max-height: 260px;
+        height: 100%;
         object-fit: cover;
     }
 
     .left-box {
         width: 100%;
-        order: 2;
-        padding: 32px 18px 40px;
-        min-height: auto;
+        padding: 40px 20px;
+    }
+}
+
+/* Small phones (iPhone 12, mini, SE) */
+@media (max-width: 430px) {
+    .right-box {
+        height: 35vh;
     }
 
-    /* ตัวหนังสือด้านบน */
-    .day-text {
-        font-size: 26px;
-        letter-spacing: 4px;
+    .left-box {
+        padding: 32px 16px;
+    }
+}
+}
+/* ===============================
+   FIX COUNTDOWN IMAGE DISAPPEAR
+   =============================== */
+
+/* Desktop */
+.countdown-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.left-box,
+.right-box {
+    width: 50%;
+}
+
+/* Tablet + Mobile */
+@media (max-width: 1024px) {
+    .countdown-wrapper {
+        flex-direction: column;
     }
 
-    .date-number {
-        font-size: 18px;
-        letter-spacing: 3px;
-        margin-bottom: 10px;
-    }
-
-    .invite-text {
-        font-size: 14px;
-        line-height: 1.6;
-        margin: 12px auto 20px;
-        max-width: 95%;
-    }
-
-    /* Countdown 2x2 */
-    .countdown-container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .countdown {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+    /* กล่องรูป */
+    .right-box {
         width: 100%;
-        max-width: 300px;
+        min-height: 260px; /* 🔴 สำคัญมาก */
+        height: 40vh;
+        order: -1;
+        display: block;
     }
 
-    .time-box {
-        padding: 16px 8px;
-        border-radius: 20px;
+    .right-box img,
+    .countdown-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
-    .time-box span {
-        font-size: 30px;
+    /* กล่องเนื้อหา */
+    .left-box {
+        width: 100%;
+        padding: 40px 20px;
+    }
+}
+
+/* iPhone 12 / small phones */
+@media (max-width: 430px) {
+    .right-box {
+        height: 32vh;
+        min-height: 220px; /* กันรูปหาย */
     }
 
-    .time-box p {
-        font-size: 11px;
-        letter-spacing: 1px;
+    .left-box {
+        padding: 32px 16px;
     }
 }
