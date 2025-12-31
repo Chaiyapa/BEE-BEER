@@ -1,18 +1,20 @@
-// ตั้งวันที่งาน
-const weddingDate = new Date("FEB 21, 2026 00:00:00").getTime();
+// ตั้งวันที่งาน (ใช้รูปแบบที่ browser เข้าใจแน่นอน)
+const weddingDate = new Date("2026-02-21T00:00:00").getTime();
 
 setInterval(function () {
     const now = new Date().getTime();
     const diff = weddingDate - now;
 
-    let days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    if (diff < 0) return; // กันค่าติดลบ
 
-    document.getElementById("days").innerHTML = days;
-    document.getElementById("hours").innerHTML = hours;
-    document.getElementById("minutes").innerHTML = minutes;
-    document.getElementById("seconds").innerHTML = seconds;
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = String(days).padStart(2, "0");
+    document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+    document.getElementById("mins").textContent = String(mins).padStart(2, "0");
+    document.getElementById("secs").textContent = String(secs).padStart(2, "0");
 
 }, 1000);
