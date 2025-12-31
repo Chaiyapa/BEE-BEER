@@ -284,28 +284,55 @@ body {
 
     /* กล่องเวลา */
     .countdown-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: clamp(10px, 3vw, 16px);
-        width: 100%;
-        max-width: 420px;
-        margin: 30px auto 0;
-    }
+    display: -ms-grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(10px, 3vw, 16px);
+    width: 100%;
+    max-width: 500px;
 
-    .time-box {
-        padding: clamp(14px, 4vw, 22px) 8px;
-        border-radius: 18px;
+    margin-top: 30px;
+    margin-left: clamp(0px, 4vw, 24px);
+    margin-right: right;
+}
     }
+.time-box {
+    padding: clamp(18px, 4.5vw, 26px) 10px;
+
+    border-radius: 22px; /* ทรงโค้ง premium */
+    
+    background: linear-gradient(
+        160deg,
+        #edf5f7,
+        #dbeaec
+    );
+
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+}
+
+.time-box:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 14px 30px rgba(0, 0, 0, 0.12),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
 
     .time-box span {
-        font-size: clamp(26px, 8vw, 38px);
-        line-height: 1.1;
+    font-size: clamp(28px, 8vw, 40px);
+    line-height: 1.15;
+    letter-spacing: 1px;
     }
 
     .time-box p {
-        font-size: clamp(12px, 3.5vw, 14px);
-        margin-top: 6px;
-    }
+    margin-top: 6px;
+    font-size: clamp(12px, 3.5vw, 14px);
+    letter-spacing: 1px;
+}
 
     /* ตัวหนังสือด้านบน */
     .day-text {
@@ -324,7 +351,15 @@ body {
         max-width: 90%;
         margin: 16px auto 0;
     }
+
+
+/* Mobile */
+@media (max-width: 900px) {
+    .right-box {
+        display: none;
+    }
 }
+
 
 /* Desktop */
 @media (min-width: 1024px) {
