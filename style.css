@@ -1,6 +1,9 @@
-/* ============================================
-   พื้นหลังโทนกระดาษ
-   ============================================ */
+/* ===============================
+   RESET & BASE
+================================ */
+* {
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
@@ -9,158 +12,91 @@ body {
     color: #333;
 }
 
-/* ---------------------------------------------------
-   PHOTO SECTION
-============================================ */
-.photo-section {
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===============================
+   SECTION WRAPPER
+================================ */
+section,
+.countdown-wrapper,
+.gallery-section {
     width: 100%;
+    padding: 60px 20px;
+}
+
+/* ===============================
+   INVITATION CARD
+================================ */
+.photo-section {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 40px;
-    box-sizing: border-box;
-    margin: 40px auto;
-    background: #fff;
-    border-radius: 22px;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.10);
-    gap: 35px;
 }
 
 .content-container {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    max-width: 1400px;
-    width: 100%;
-    padding: 20px;
-}
-
-/* กล่องภาพ */
-.photo-box {
-    flex: 1;
-    max-width: 550px;
-}
-
-.photo-box img {
-    width: 110%;
-    border-radius: 10px;
-    object-fit: cover;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-/* กล่องข้อความ */
-.text-box {
-    flex: 1;
-    text-align: center;
-}
-
-/* Logo style */
-.logo {
-    font-size: 48px;
-    margin: 0;
-    color: #7aa989;
-    font-family: "Brush Script MT", cursive;
-}
-
-.subtitle {
-    margin-top: -8px;
-    font-size: 16px;
-    letter-spacing: 2px;
-    color: #777;
-}
-
-.divider {
-    width: 70%;
-    height: 1px;
-    background: #ccc;
-    margin: 25px auto;
-}
-
-.save-title {
-    letter-spacing: 5px;
-    font-size: 18px;
-    color: #666;
-}
-
-.date {
-    font-size: 32px;
-    margin: 10px 0 20px;
-    letter-spacing: 3px;
-    color: #444;
-}
-
-.desc {
-    font-size: 12px;
-    color: #777;
-    width: 80%;
-    margin: 0 auto;
-    line-height: 1.6;
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-    .content-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .photo-box {
-        max-width: 90%;
-    }
-}
-
-/* ---------------------------------------------------
- SECTION 2
-============================================ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* INVITATION */
-.photo-section {
-    background: #fff;
-    margin: 40px;
-    padding: 40px;
-    border-radius: 22px;
-}
-
-.content-container {
+    max-width: 1100px;
+    margin: auto;
     display: flex;
     gap: 40px;
     align-items: center;
 }
 
-.photo-box img {
-    width: 100%;
-    border-radius: 12px;
+.photo-box {
+    flex: 1;
 }
 
 .text-box {
-    text-align: center;
+    flex: 1;
 }
 
 .logo {
+    font-family: 'Playfair Display', serif;
     font-size: 48px;
-    color: #7aa989;
-    font-family: "Brush Script MT", cursive;
 }
 
-.divider {
-    height: 1px;
-    background: #ccc;
-    margin: 20px auto;
-    width: 60%;
+.subtitle {
+    letter-spacing: 2px;
 }
 
-/* COUNTDOWN */
+.desc {
+    line-height: 1.8;
+}
+.invitation {
+    min-height: 60vh;              /* ให้มีความสูงพอสำหรับจัดกลาง */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;       /* กลางแนวตั้ง */
+    align-items: center;           /* กลางแนวนอน */
+    text-align: center;            /* ตัวอักษรอยู่กลาง */
+    padding: 40px 20px;
+}
+.invitation h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.invitation p {
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+
+/* ===============================
+   COUNTDOWN
+================================ */
 .countdown-wrapper {
     display: flex;
     min-height: 100vh;
 }
 
+/* ===============================
+   LEFT / RIGHT
+================================ */
 .left-box {
     width: 50%;
     padding: 80px 60px;
@@ -178,6 +114,9 @@ body {
     object-fit: cover;
 }
 
+/* ===============================
+   TEXT
+================================ */
 .day-text {
     font-family: 'Playfair Display', serif;
     letter-spacing: 6px;
@@ -188,7 +127,9 @@ body {
     margin-top: 30px;
 }
 
-/* DESKTOP */
+/* ===============================
+   DESKTOP (DEFAULT)
+================================ */
 .countdown {
     display: flex;
     gap: 18px;
@@ -207,87 +148,12 @@ body {
     color: #4d5d6c;
 }
 
-/* MOBILE = แถบแนวนอน 4 ช่อง */
+/* ===============================
+   TABLET + MOBILE
+================================ */
 @media (max-width: 768px) {
 
-    .countdown-wrapper {
-        flex-direction: column;
-    }
-
-    .right-box {
-        display: none;
-    }
-
-    .left-box {
-        width: 100%;
-        padding: 40px 20px;
-    }
-
-    .countdown {
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        background: #cfd8d0;
-        border-radius: 6px;
-        overflow: hidden;
-    }
-
-    .time-box {
-        background: transparent;
-        box-shadow: none;
-        border-radius: 0;
-        padding: 14px 6px;
-        border-right: 1px solid rgba(255,255,255,0.6);
-    }
-
-    .time-box:last-child {
-        border-right: none;
-    }
-
-    .time-box span {
-        font-size: 24px;
-    }
-
-    .time-box p {
-        font-size: 11px;
-    }
-}
-
-/* SCHEDULE */
-.schedule {
-    max-width: 600px;
-    margin: 60px auto;
-    background: #fff;
-    padding: 30px;
-    border-radius: 20px;
-}
-
-/* FOOTER */
-.footer {
-    text-align: center;
-    margin: 60px 0;
-}
-/* =========================================
-   FIX COUNTDOWN SECTION – iPhone 11 ↓
-========================================= */
-@media (max-width: 480px) {
-
-  /* ===============================
-   COUNTDOWN IMAGE FIX ALL DEVICES
-   =============================== */
-
-/* Desktop */
-.countdown-wrapper {
-    display: flex;
-    min-height: 100vh;
-}
-
-.left-box,
-.right-box {
-    width: 50%;
-}
-
-/* Tablet + Mobile (รูปบน เนื้อหาล่าง) */
-@media (max-width: 1024px) {
+    /* รูปบน / เนื้อหาล่าง */
     .countdown-wrapper {
         flex-direction: column;
         min-height: auto;
@@ -295,87 +161,146 @@ body {
 
     .right-box {
         width: 100%;
-        height: 42vh;
-        order: -1; /* รูปขึ้นก่อน */
-        display: block;
-    }
-
-    .countdown-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .left-box {
-        width: 100%;
-        padding: 40px 20px;
-    }
-}
-
-/* Small phones (iPhone 12, mini, SE) */
-@media (max-width: 430px) {
-    .right-box {
-        height: 35vh;
-    }
-
-    .left-box {
-        padding: 32px 16px;
-    }
-}
-}
-/* ===============================
-   FIX COUNTDOWN IMAGE DISAPPEAR
-   =============================== */
-
-/* Desktop */
-.countdown-wrapper {
-    display: flex;
-    min-height: 100vh;
-}
-
-.left-box,
-.right-box {
-    width: 50%;
-}
-
-/* Tablet + Mobile */
-@media (max-width: 1024px) {
-    .countdown-wrapper {
-        flex-direction: column;
-    }
-
-    /* กล่องรูป */
-    .right-box {
-        width: 100%;
-        min-height: 260px; /* 🔴 สำคัญมาก */
         height: 40vh;
         order: -1;
-        display: block;
     }
 
-    .right-box img,
-    .countdown-img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    /* กล่องเนื้อหา */
     .left-box {
         width: 100%;
-        padding: 40px 20px;
+        padding: 50px 20px;
+    }
+
+    /* 🔥 เปลี่ยน countdown เป็น 4 ช่องแบบ grid */
+    .countdown {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2x2 */
+        gap: 16px;
+        justify-items: center;
+    }
+
+    .time-box {
+        width: 100%;
+        max-width: 140px;
+    }
+
+    .time-box span {
+        font-size: 34px;
     }
 }
 
-/* iPhone 12 / small phones */
-@media (max-width: 430px) {
-    .right-box {
-        height: 32vh;
-        min-height: 220px; /* กันรูปหาย */
+/* ===============================
+   SMALL MOBILE
+================================ */
+@media (max-width: 480px) {
+
+    .day-text {
+        font-size: 26px;
+        letter-spacing: 4px;
     }
 
-    .left-box {
-        padding: 32px 16px;
+    .time-box span {
+        font-size: 30px;
+    }
+}
+
+
+/* ===============================
+   SCHEDULE
+================================ */
+.schedule {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.schedule-text {
+    flex: 1;
+}
+
+.schedule-img {
+    flex: 1;
+    border-radius: 12px;
+}
+
+/* ===============================
+   GALLERY
+================================ */
+.gallery-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.gfb-gallery {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.gfb-gallery img {
+    width: 280px;
+    border-radius: 12px;
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+    text-align: center;
+    padding: 50px 20px;
+    font-size: 14px;
+}
+
+/* =================================================
+   📱 MOBILE (<= 768px)
+================================================= */
+@media (max-width: 768px) {
+
+    .content-container,
+    .countdown-wrapper,
+    .schedule {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo {
+        font-size: 36px;
+    }
+
+    .countdown {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .time-box {
+        min-width: 70px;
+    }
+
+    .gfb-gallery img {
+        width: 220px;
+    }
+}
+
+/* =================================================
+   📱 SMALL MOBILE (<= 480px)
+================================================= */
+@media (max-width: 480px) {
+
+    section {
+        padding: 40px 15px;
+    }
+
+    .logo {
+        font-size: 30px;
+    }
+
+    .desc {
+        font-size: 14px;
+    }
+
+    .gfb-gallery img {
+        width: 180px;
     }
 }
